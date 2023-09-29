@@ -47,8 +47,7 @@ export function text_print(block) {
 };
 
 export function text_nocrlf_print(block) {
-  var msg = notImplementedMsg + ': text_nocrlf_print';
-  return 'console.log("' + msg + '")';
+  const msg = BlocklyGene.valueToCode(block, 'TEXT', Order.NONE) || "''";
+  return 'process.stdout.write(' + msg +');\n';
 };
-
 
