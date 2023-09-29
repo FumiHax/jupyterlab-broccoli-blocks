@@ -4,7 +4,7 @@ import {
 } from '@jupyterlab/application';
 import { IBlocklyRegistry, BlocklyRegistry } from 'jupyterlab-blockly';
 
-import BlocklyBlocks from './blockly_blocks';
+import BlocklyBlocks from './blocks';
 
 import * as func_python from './python/func.js';
 import * as func_js from './javascript/func.js';
@@ -36,7 +36,6 @@ const plugin: JupyterFrontEndPlugin<void> = {
     });
 
     blockly.registerToolbox('blocks', BlocklyBlocks.Toolbox);
-    //
     blockly.registerCode('python', func_python);
     blockly.registerCode('javascript', func_js);
     blockly.registerCode('lua', func_lua);
