@@ -1,2 +1,2 @@
 # jupyterlab-blockly-blocks
-Extension template for jupyterlab-blockly 
+Extension template for jupyterlab-broccoli
