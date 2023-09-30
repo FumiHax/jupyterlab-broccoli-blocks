@@ -4,7 +4,7 @@ export const TOOLBOX_BASIC = {
   contents: [
     {
       kind: 'category',
-      name: '%{BKY_LOGIC}',
+      name: '%{BKY_TOOLBOX_LOGIC}',
       colour: '210',
       contents: [
         {
@@ -44,7 +44,7 @@ export const TOOLBOX_BASIC = {
     },
     {
       kind: 'category',
-      name: '%{BKY_LOOPS}',
+      name: '%{BKY_TOOLBOX_LOOPS}',
       colour: '120',
       contents: [
         {
@@ -100,7 +100,7 @@ export const TOOLBOX_BASIC = {
     },
     {
       kind: 'CATEGORY',
-      name: '%{BKY_MATH}',
+      name: '%{BKY_TOOLBOX_MATH}',
       colour: '230',
       contents: [
         {
@@ -260,7 +260,7 @@ export const TOOLBOX_BASIC = {
     },
     {
       kind: 'CATEGORY',
-      name: '%{BKY_TEXT}',
+      name: '%{BKY_TOOLBOX_TEXT}',
       colour: '160',
       contents: [
         {
@@ -400,7 +400,7 @@ export const TOOLBOX_BASIC = {
     },
     {
       kind: 'CATEGORY',
-      name: '%{BKY_LISTS}',
+      name: '%{BKY_TOOLBOX_LISTS}',
       colour: '260',
       contents: [
         {
@@ -507,7 +507,7 @@ export const TOOLBOX_BASIC = {
     },
     {
       kind: 'CATEGORY',
-      name: '%{BKY_COLOR}',
+      name: '%{BKY_TOOLBOX_COLOR}',
       colour: '20',
       contents: [
         {
@@ -573,13 +573,13 @@ export const TOOLBOX_BASIC = {
       kind: 'CATEGORY',
       custom: 'VARIABLE',
       colour: '330',
-      name: '%{BKY_VARIABLES}'
+      name: '%{BKY_TOOLBOX_VARIABLES}'
     },
     {
       kind: 'CATEGORY',
       custom: 'PROCEDURE',
       colour: '290',
-      name: '%{BKY_FUNCTIONS}'
+      name: '%{BKY_TOOLBOX_FUNCTIONS}'
     },
   ]
 };

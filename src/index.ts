@@ -4,8 +4,7 @@ import {
 } from '@jupyterlab/application';
 import { IBlocklyRegistry, BlocklyRegistry } from 'jupyterlab-blockly';
 
-import BlocklyBlocks from './blocks';
-
+import { TOOLBOX } from './blocks';
 import * as func_python from './python/func.js';
 import * as func_js from './javascript/func.js';
 import * as func_lua from './lua/func.js';
@@ -19,14 +18,13 @@ const plugin: JupyterFrontEndPlugin<void> = {
   id: 'jupyterlab-blockly-blocks:plugin',
   autoStart: true,
   requires: [IBlocklyRegistry],
-  activate: (app: JupyterFrontEnd, registor: IBlocklyRegistry) => {
+  activate: (app: JupyterFrontEnd, register: IBlocklyRegistry) => {
     console.log(
       'JupyterLab extension jupyterlab-blockly-blocks is activated!'
     );
-    const blockly = (registor as BlocklyRegistry);
 
     // Localization 
-    let language = blockly.language;
+    let language = (register as BlocklyRegistry).language;
     import(`./msg/${language}.js`)
     .catch(() => {
       if (language !== 'En') {
@@ -35,12 +33,12 @@ const plugin: JupyterFrontEndPlugin<void> = {
       }
     });
 
-    blockly.registerToolbox('blocks', BlocklyBlocks.Toolbox);
-    blockly.registerCode('python', func_python);
-    blockly.registerCode('javascript', func_js);
-    blockly.registerCode('lua', func_lua);
-    blockly.registerCode('dart', func_dart);
-    blockly.registerCode('php', func_php);
+    register.registerToolbox('blocks', TOOLBOX);
+    register.registerCodes('python', func_python);
+    register.registerCodes('javascript', func_js);
+    register.registerCodes('lua', func_lua);
+    register.registerCodes('dart', func_dart);
+    register.registerCodes('php', func_php);
   }
 };
 

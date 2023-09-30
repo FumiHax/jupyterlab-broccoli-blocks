@@ -1,5 +1,7 @@
 
-const notImplementedMsg = 'This function is not implemented in this kernel';
+//import { phpGenerator as BlocklyGene } from 'blockly/php';
+
+const notImplementedMsg = 'Not implemented';
 
 export function dummy_function(block, generator) {
   return notImplementedMsg;

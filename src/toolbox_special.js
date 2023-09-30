@@ -1,13 +1,11 @@
 
-var blocks_color = '#8169DF';
-
 export const TOOLBOX_SPECIAL = {
   kind: 'categoryToolbox',
   contents: [
     {
       kind: 'CATEGORY',
-      name: '%{BKY_SPECIAL}',
-      colour: blocks_color,
+      name: '%{BKY_TOOLBOX_SPECIAL}',
+      colour: 330,
       contents: [
         {
           kind: 'BLOCK',

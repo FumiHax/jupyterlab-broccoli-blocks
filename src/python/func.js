@@ -26,7 +26,7 @@ const Order = {
 };
 
 //
-//const notImplementedMsg = 'This function is not implemented in this kernel';
+//const notImplementedMsg = 'Not implemented';
 
 export function text_nocrlf_print(block) {
   const msg = BlocklyGene.valueToCode(block, 'TEXT', Order.NONE) || "''";

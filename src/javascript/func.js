@@ -1,5 +1,5 @@
 
-import { pythonGenerator as BlocklyGene } from 'blockly/python';
+import { javascriptGenerator as BlocklyGene } from 'blockly/javascript';
 
 const Order = {
   ATOMIC: 0,            // 0 "" ...
@@ -39,7 +39,7 @@ const Order = {
   NONE: 99,             // (...)
 };
 
-const notImplementedMsg = 'This function is not implemented in this kernel';
+const notImplementedMsg = 'Not implemented';
 
 export function text_print(block) {
   const msg = BlocklyGene.valueToCode(block, 'TEXT', Order.NONE) || "''";
