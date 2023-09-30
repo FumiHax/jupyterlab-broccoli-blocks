@@ -1,5 +1,5 @@
 {
-  "name": "jupyterlab-blockly-blocks",
+  "name": "jupyterlab-broccoli-blocks",
   "version": "0.1.0",
   "description": "Template of Blockly extension for JupyterLab.",
   "keywords": [
@@ -7,9 +7,9 @@
     "jupyterlab",
     "jupyterlab-extension"
   ],
-  "homepage": "https://github.com/QuantStack/jupyterlab-blockly-blocks",
+  "homepage": "https://github.com/fiseki/jupyterlab-broccoli-blocks",
   "bugs": {
-    "url": "https://github.com/QuantStack/jupyterlab-blockly-blocks/issues"
+    "url": "https://github.com/QuantStack/jupyterlab-broccoli-blocks/issues"
   },
   "license": "BSD-3-Clause",
   "author": {
@@ -25,7 +25,7 @@
   "style": "style/index.css",
   "repository": {
     "type": "git",
-    "url": "https://github.com/QuantStack/jupyterlab-blockly-blocks.git"
+    "url": "https://github.com/QuantStack/jupyterlab-broccoli-blocks.git"
   },
   "scripts": {
     "build": "jlpm build:lib && jlpm build:labextension:dev",
@@ -37,7 +37,7 @@
     "clean": "jlpm clean:lib",
     "clean:lib": "rimraf lib tsconfig.tsbuildinfo",
     "clean:lintcache": "rimraf .eslintcache .stylelintcache",
-    "clean:labextension": "rimraf jupyterlab_blockly_blocks/labextension jupyterlab_blockly_blocks/_version.py",
+    "clean:labextension": "rimraf jupyterlab_broccoli_blocks/labextension jupyterlab_broccoli_blocks/_version.py",
     "clean:all": "jlpm clean:lib && jlpm clean:labextension && jlpm clean:lintcache",
     "eslint": "jlpm eslint:check --fix",
     "eslint:check": "eslint . --cache --ext .ts,.tsx",
@@ -70,7 +70,7 @@
     "@lumino/signaling": "^1.10.0",
     "@lumino/widgets": "^1.37.1",
     "blockly": "^9.2.1",
-    "jupyterlab-blockly": "^0.3.1-alpha.4",
+    "jupyterlab-broccoli": "^0.3.1",
     "patch-package": "^6.4.7",
     "postinstall-postinstall": "^2.1.0",
     "react": "^17.0.1",
@@ -109,7 +109,7 @@
   },
   "jupyterlab": {
     "extension": true,
-    "outputDir": "jupyterlab_blockly_blocks/labextension",
+    "outputDir": "jupyterlab_broccoli_blocks/labextension",
     "webpackConfig": "./webpack.config.js"
   },
   "eslintIgnore": [

@@ -3,7 +3,7 @@ requires = ["hatchling>=1.4.0", "jupyterlab~=3.6", "hatch-nodejs-version"]
 build-backend = "hatchling.build"
 
 [project]
-name = "jupyterlab-blockly-blocks"
+name = "jupyterlab-broccoli-blocks"
 readme = "README.md"
 license = { file = "LICENSE" }
 requires-python = ">=3.7"
@@ -25,7 +25,7 @@ classifiers = [
 dependencies = [
  "jupyterlab~=3.6.0",
  "ipywidgets~=7.6.0",
- "jupyterlab-blockly>=0.3.0a4, <0.4",
+ "jupyterlab-broccoli>=0.3.0a4, <0.4",
 ]
 dynamic = ["version", "description", "authors", "urls", "keywords"]
 
@@ -36,24 +36,24 @@ source = "nodejs"
 fields = ["description", "authors", "urls"]
 
 [tool.hatch.build.targets.sdist]
-artifacts = ["jupyterlab_blockly_blocks/labextension"]
+artifacts = ["jupyterlab_broccoli_blocks/labextension"]
 exclude = [".github", "binder"]
 
 [tool.hatch.build.targets.wheel.shared-data]
-"jupyterlab_blockly_blocks/labextension" = "share/jupyter/labextensions/jupyterlab-blockly-blocks"
-"install.json" = "share/jupyter/labextensions/jupyterlab-blockly-blocks/install.json"
+"jupyterlab_broccoli_blocks/labextension" = "share/jupyter/labextensions/jupyterlab-broccoli-blocks"
+"install.json" = "share/jupyter/labextensions/jupyterlab-broccoli-blocks/install.json"
 
 [tool.hatch.build.hooks.version]
-path = "jupyterlab_blockly_blocks/_version.py"
+path = "jupyterlab_broccoli_blocks/_version.py"
 
 [tool.hatch.build.hooks.jupyter-builder]
 dependencies = ["hatch-jupyter-builder>=0.5"]
 build-function = "hatch_jupyter_builder.npm_builder"
 ensured-targets = [
-    "jupyterlab_blockly_blocks/labextension/static/style.js",
-    "jupyterlab_blockly_blocks/labextension/package.json",
+    "jupyterlab_broccoli_blocks/labextension/static/style.js",
+    "jupyterlab_broccoli_blocks/labextension/package.json",
 ]
-skip-if-exists = ["jupyterlab_blockly_blocks/labextension/static/style.js"]
+skip-if-exists = ["jupyterlab_broccoli_blocks/labextension/static/style.js"]
 
 [tool.hatch.build.hooks.jupyter-builder.build-kwargs]
 build_cmd = "build:prod"
@@ -63,7 +63,7 @@ npm = ["jlpm"]
 build_cmd = "install:extension"
 npm = ["jlpm"]
 source_dir = "src"
-build_dir = "jupyterlab_blockly_blocks/labextension"
+build_dir = "jupyterlab_broccoli_blocks/labextension"
 
 [tool.jupyter-releaser.options]
 version_cmd = "hatch version"

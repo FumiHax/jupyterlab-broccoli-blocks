@@ -2,7 +2,7 @@ import {
   JupyterFrontEnd,
   JupyterFrontEndPlugin
 } from '@jupyterlab/application';
-import { IBlocklyRegistry, BlocklyRegistry } from 'jupyterlab-blockly';
+import { IBlocklyRegistry, BlocklyRegistry } from 'jupyterlab-broccoli';
 
 import { TOOLBOX } from './blocks';
 import * as func_python from './python/func.js';
@@ -12,15 +12,15 @@ import * as func_dart from './dart/func.js';
 import * as func_php from './php/func.js';
 
 /**
- * Initialization data for the jupyterlab-blockly-blocks extension.
+ * Initialization data for the jupyterlab-broccoli-blocks extension.
  */
 const plugin: JupyterFrontEndPlugin<void> = {
-  id: 'jupyterlab-blockly-blocks:plugin',
+  id: 'jupyterlab-broccoli-blocks:plugin',
   autoStart: true,
   requires: [IBlocklyRegistry],
   activate: (app: JupyterFrontEnd, register: IBlocklyRegistry) => {
     console.log(
-      'JupyterLab extension jupyterlab-blockly-blocks is activated!'
+      'JupyterLab extension jupyterlab-broccoli-blocks is activated!'
     );
 
     // Localization 
