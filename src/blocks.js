@@ -1,13 +1,14 @@
 
 import * as Blockly from 'blockly';
 
-import { ToolboxUtils } from './utils';
-import { TOOLBOX_BASIC } from './toolbox_basic';
+//import { ToolboxUtils } from './utils';
+//import { TOOLBOX_BASIC } from './toolbox_basic';
 import { TOOLBOX_SPECIAL } from './toolbox_special';
 
 //
-const toolboxUtils = new ToolboxUtils();
-export const TOOLBOX = toolboxUtils.add(TOOLBOX_BASIC, TOOLBOX_SPECIAL, 1);
+//const toolboxUtils = new ToolboxUtils();
+//export const TOOLBOX = toolboxUtils.add(TOOLBOX_BASIC, TOOLBOX_SPECIAL, 1);
+export const TOOLBOX = TOOLBOX_SPECIAL;
 
 //
 Blockly.defineBlocksWithJsonArray(

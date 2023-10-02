@@ -3,6 +3,7 @@ import {
   JupyterFrontEndPlugin
 } from '@jupyterlab/application';
 import { IBlocklyRegistry, BlocklyRegistry } from 'jupyterlab-broccoli';
+import { ITranslator, nullTranslator } from '@jupyterlab/translation';
 
 import { TOOLBOX } from './blocks';
 import * as func_python from './python/func.js';
@@ -17,8 +18,8 @@ import * as func_php from './php/func.js';
 const plugin: JupyterFrontEndPlugin<void> = {
   id: 'jupyterlab-broccoli-blocks:plugin',
   autoStart: true,
-  requires: [IBlocklyRegistry],
-  activate: (app: JupyterFrontEnd, register: IBlocklyRegistry) => {
+  requires: [IBlocklyRegistry, ITranslator],
+  activate: (app: JupyterFrontEnd, register: IBlocklyRegistry, translator: ITranslator) => {
     console.log(
       'JupyterLab extension jupyterlab-broccoli-blocks is activated!'
     );
@@ -32,8 +33,10 @@ const plugin: JupyterFrontEndPlugin<void> = {
         .catch(() => {});
       }
     });
+    const trans = (translator || nullTranslator).load('jupyterlab');
 
-    register.registerToolbox('blocks', TOOLBOX);
+    register.registerToolbox(trans.__('specail'), TOOLBOX);
+    //
     register.registerCodes('python', func_python);
     register.registerCodes('javascript', func_js);
     register.registerCodes('lua', func_lua);
