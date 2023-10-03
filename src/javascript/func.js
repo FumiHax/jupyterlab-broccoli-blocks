@@ -39,7 +39,7 @@ const Order = {
   NONE: 99,             // (...)
 };
 
-const notImplementedMsg = 'Not implemented';
+const notImplementedMsg = 'Not implemented at this Kernel';
 
 export function text_print(block) {
   const msg = BlocklyGene.valueToCode(block, 'TEXT', Order.NONE) || "''";

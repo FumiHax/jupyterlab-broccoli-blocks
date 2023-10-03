@@ -25,7 +25,7 @@ const plugin: JupyterFrontEndPlugin<void> = {
     );
 
     // Localization 
-    let language = (register as BlocklyRegistry).language;
+    const language = (register as BlocklyRegistry).language;
     import(`./msg/${language}.js`)
     .catch(() => {
       if (language !== 'En') {
@@ -35,7 +35,7 @@ const plugin: JupyterFrontEndPlugin<void> = {
     });
     const trans = (translator || nullTranslator).load('jupyterlab');
 
-    register.registerToolbox(trans.__('specail'), TOOLBOX);
+    register.registerToolbox(trans.__('special'), TOOLBOX);
     //
     register.registerCodes('python', func_python);
     register.registerCodes('javascript', func_js);
