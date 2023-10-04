@@ -11,3 +11,6 @@ or
 pip install jupyterlab-broccoli
 pip install jupyterlab-broccoli-blocks
 ```
+## Development
+* see jupyterlab-blockly
+  * https://github.com/QuantStack/jupyterlab-blockly
