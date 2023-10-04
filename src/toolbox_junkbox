@@ -1,10 +1,10 @@
 
-export const TOOLBOX_SPECIAL = {
+export const TOOLBOX_JUNKBOX = {
   kind: 'categoryToolbox',
   contents: [
     {
       kind: 'CATEGORY',
-      name: '%{BKY_TOOLBOX_SPECIAL}',
+      name: '%{BKY_TOOLBOX_JUNKBOX}',
       colour: 330,
       contents: [
         {
