@@ -34,7 +34,7 @@ Blockly.defineBlocksWithJsonArray(
 [{
   'type': 'color_hsv2rgb',
   'message0': 
-    '%{BKY_BLOCK_COLOR_HSV2RGB}  %{BKY_BLOCK_COLOR_H}  %1 %{BKY_BLOCK_COLOR_S}  %2 %{BKY_BLOCK_COLOR_V}  %3',
+    '%{BKY_BLOCK_COLOR_HSV2RGB}  %1 %{BKY_BLOCK_COLOR_S}  %2 %{BKY_BLOCK_COLOR_V}  %3',
   'args0': [
     {
       'type':  'input_value',
