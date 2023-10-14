@@ -29,8 +29,36 @@ const Order = {
 //
 //const notImplementedMsg = 'Not implemented at this Kernel';
 
+/*
+function disp_obj(obj) {
+   const getMethods = (obj) => {
+       const getOwnMethods = (obj) =>
+       Object.entries(Object.getOwnPropertyDescriptors(obj))
+           .filter(([name, {value}]) => typeof value === 'function' && name !== 'constructor')
+           .map(([name]) => name)
+       const _getMethods = (o, methods) =>
+       o === Object.prototype ? methods : _getMethods(Object.getPrototypeOf(o), methods.concat(getOwnMethods(o)))
+       return _getMethods(obj, [])
+   }
+
+   console.log("+++++++++++++++++++++++++++++++++++");
+   for (const key in obj) {
+     console.log(String(key) + " -> " + obj[key]);
+   }
+   console.log("===================================");
+   console.log(getMethods(obj));
+   console.log("+++++++++++++++++++++++++++++++++++");
+}
+*/
+
 export function text_nocrlf_print(block) {
-  const msg = BlocklyGene.valueToCode(block, 'TEXT', Order.NONE) || "''";
+  let msg = "''";
+  try {
+    msg = BlocklyGene.valueToCode(block, 'TEXT', Order.NONE) || "''";
+  } 
+  catch(e) {
+    msg = block.childBlocks_;
+  }
   return 'print(' + msg + ', end="")\n';
 };
 

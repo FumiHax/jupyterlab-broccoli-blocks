@@ -18,10 +18,8 @@ Blockly.defineBlocksWithJsonArray(
     {
       'type': 'input_value',
       'name': 'TEXT',
-      'check': 'String',
     }
   ],
-  'inputsInline': false,
   'previousStatement': null,
   'nextStatement': null,
   'colour': 230,
