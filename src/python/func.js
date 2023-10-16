@@ -54,7 +54,7 @@ function disp_obj(obj) {
 export function text_nocrlf_print(block) {
   let msg = "''";
   try {
-    msg = BlocklyGene.valueToCode(block, 'TEXT', Order.NONE) || "''";
+    msg = BlocklyGene.valueToCode(block, 'TEXT', BlocklyGene.ORDER_NONE) || "''";
   } 
   catch(e) {
     msg = block.childBlocks_;
