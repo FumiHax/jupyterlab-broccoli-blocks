@@ -42,12 +42,24 @@ const Order = {
 const notImplementedMsg = 'Not implemented at this Kernel';
 
 export function text_print(block) {
-  const msg = BlocklyGene.valueToCode(block, 'TEXT', Order.NONE) || "''";
+  let msg = "''";
+  try {
+    msg = BlocklyGene.valueToCode(block, 'TEXT', Order.NONE) || "''";
+  }
+  catch(e) {
+    msg = block.childBlocks_;
+  }
   return 'console.log(' + msg + ');\n';
 };
 
 export function text_nocrlf_print(block) {
-  const msg = BlocklyGene.valueToCode(block, 'TEXT', Order.NONE) || "''";
+  let msg = "''";
+  try {
+    msg = BlocklyGene.valueToCode(block, 'TEXT', Order.NONE) || "''";
+  }
+  catch(e) {
+    msg = block.childBlocks_;
+  }
   return 'process.stdout.write(' + msg +');\n';
 };
 

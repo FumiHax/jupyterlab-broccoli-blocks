@@ -59,7 +59,7 @@ export function text_nocrlf_print(block) {
   catch(e) {
     msg = block.childBlocks_;
   }
-  return 'print(' + msg + ', end="")\n';
+  return 'print(' + msg + ', end = "")\n';
 };
 
 //
