@@ -1,7 +1,6 @@
+import { pythonGenerator as Python } from 'blockly/python';
 
-import { pythonGenerator as BlocklyGene } from 'blockly/python';
-
-const Order = {
+/*
   ATOMIC: 0,             // 0 "" ...
   COLLECTION: 1,         // tuples, lists, dictionaries
   STRING_CONVERSION: 1,  // `expression...`
@@ -23,50 +22,30 @@ const Order = {
   CONDITIONAL: 15,       // if else
   LAMBDA: 16,            // lambda
   NONE: 99,              // (...)
-};
 /**/
 
 //
 //const notImplementedMsg = 'Not implemented at this Kernel';
 
-/*
-function disp_obj(obj) {
-   const getMethods = (obj) => {
-       const getOwnMethods = (obj) =>
-       Object.entries(Object.getOwnPropertyDescriptors(obj))
-           .filter(([name, {value}]) => typeof value === 'function' && name !== 'constructor')
-           .map(([name]) => name)
-       const _getMethods = (o, methods) =>
-       o === Object.prototype ? methods : _getMethods(Object.getPrototypeOf(o), methods.concat(getOwnMethods(o)))
-       return _getMethods(obj, [])
-   }
+//export function getPythonFuncs(generator: Blockly.Generator): {[name: string]: Function}
+//var funcs: {[name: string]: Function} = {};
+//funcs['text_nocrlf_print'] = function(block: Blockly.Block) {
 
-   console.log("+++++++++++++++++++++++++++++++++++");
-   for (const key in obj) {
-     console.log(String(key) + " -> " + obj[key]);
-   }
-   console.log("===================================");
-   console.log(getMethods(obj));
-   console.log("+++++++++++++++++++++++++++++++++++");
-}
-*/
-
-export function text_nocrlf_print(block) {
-  let msg = "''";
-  try {
-    msg = BlocklyGene.valueToCode(block, 'TEXT', BlocklyGene.ORDER_NONE) || "''";
-  } 
-  catch(e) {
-    msg = block.childBlocks_;
-  }
-  return 'print(' + msg + ', end = "")\n';
-};
+export function getPythonFuncs(generator)
+{
+  var funcs = {};
 
 //
-export function color_hsv2rgb(block) {
-  let hh = BlocklyGene.valueToCode(block, 'H', Order.NONE) || "''";
-  let ss = BlocklyGene.valueToCode(block, 'S', Order.NONE) || "''";
-  let vv = BlocklyGene.valueToCode(block, 'V', Order.NONE) || "''";
+funcs['text_nocrlf_print'] = function(block) {
+  const  msg = generator.valueToCode(block, 'TEXT', Python.ORDER_NONE) || "''";
+  return 'print(' + msg + ', end = "")\n';
+}
+
+//
+funcs['color_hsv2rgb'] = function(block) {
+  let hh = generator.valueToCode(block, 'H', Python.ORDER_NONE) || "1.0";
+  let ss = generator.valueToCode(block, 'S', Python.ORDER_NONE) || "1.0";
+  let vv = generator.valueToCode(block, 'V', Python.ORDER_NONE) || "1.0";
 
   hh = hh % 360;
   if (hh<0.0) hh = hh + 360;
@@ -117,8 +96,11 @@ export function color_hsv2rgb(block) {
   bc = Math.trunc(bc*255);
   //
   const rgb = '#' + rc.toString(16) + gc.toString(16) + bc.toString(16);
-  const code = BlocklyGene.quote_(rgb);
-  return [code, Order.FUNCTION_CALL];
+  const code = Python.quote_(rgb);
+  return [code, Python.ORDER_FUNCTION_CALL];
 };
-/**/
 
+
+  //
+  return funcs;
+}
