@@ -1,8 +1,16 @@
+//
+import { dartGenerator as Dart } from 'blockly/dart';
 
-//import { dartGenerator as BlocklyGene } from 'blockly/dart';
+//
+export function getDartFunctions(generator) {
+  var funcs = {};
 
-const notImplementedMsg = 'Not implemented';
-
-export function dummy_function(block, generator) {
-  return notImplementedMsg;
+//
+funcs['text_nocrlf_print'] = function(block) {
+  const msg = generator.Gene.valueToCode(block, 'TEXT', Dart.ORDER_NONE) || "''";
+  return 'stdout.write(' + msg +');\n';
 };
+
+  //
+  return funs;
+}

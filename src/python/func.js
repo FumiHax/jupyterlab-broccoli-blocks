@@ -1,37 +1,36 @@
+//
 import { pythonGenerator as Python } from 'blockly/python';
 
 /*
-  ATOMIC: 0,             // 0 "" ...
-  COLLECTION: 1,         // tuples, lists, dictionaries
-  STRING_CONVERSION: 1,  // `expression...`
-  MEMBER: 2.1,           // . []
-  FUNCTION_CALL: 2.2,    // ()
-  EXPONENTIATION: 3,     // **
-  UNARY_SIGN: 4,         // + -
-  BITWISE_NOT: 4,        // ~
-  MULTIPLICATIVE: 5,     // * / // %
-  ADDITIVE: 6,           // + -
-  BITWISE_SHIFT: 7,      // << >>
-  BITWISE_AND: 8,        // &
-  BITWISE_XOR: 9,        // ^
-  BITWISE_OR: 10,        // |
-  RELATIONAL: 11,        // in, not in, is, is not, >, >=, <>, !=, ==
-  LOGICAL_NOT: 12,       // not
-  LOGICAL_AND: 13,       // and
-  LOGICAL_OR: 14,        // or
-  CONDITIONAL: 15,       // if else
-  LAMBDA: 16,            // lambda
-  NONE: 99,              // (...)
+Python.ORDER_ATOMIC = 0;             // 0 "" ...
+Python.ORDER_COLLECTION = 1;         // tuples, lists, dictionaries
+Python.ORDER_STRING_CONVERSION = 1;  // `expression...`
+Python.ORDER_MEMBER = 2.1;           // . []
+Python.ORDER_FUNCTION_CALL = 2.2;    // ()
+Python.ORDER_EXPONENTIATION = 3;     // **
+Python.ORDER_UNARY_SIGN = 4;         // + -
+Python.ORDER_BITWISE_NOT = 4;        // ~
+Python.ORDER_MULTIPLICATIVE = 5;     // * / // %
+Python.ORDER_ADDITIVE = 6;           // + -
+Python.ORDER_BITWISE_SHIFT = 7;      // << >>
+Python.ORDER_BITWISE_AND = 8;        // &
+Python.ORDER_BITWISE_XOR = 9;        // ^
+Python.ORDER_BITWISE_OR = 10;        // |
+Python.ORDER_RELATIONAL = 11;        // in, not in, is, is not,
+                                     //     <, <=, >, >=, <>, !=, ==
+Python.ORDER_LOGICAL_NOT = 12;       // not
+Python.ORDER_LOGICAL_AND = 13;       // and
+Python.ORDER_LOGICAL_OR = 14;        // or
+Python.ORDER_CONDITIONAL = 15;       // if else
+Python.ORDER_LAMBDA = 16;            // lambda
+Python.ORDER_NONE = 99;              // (...)
 /**/
 
 //
 //const notImplementedMsg = 'Not implemented at this Kernel';
 
-//export function getPythonFuncs(generator: Blockly.Generator): {[name: string]: Function}
-//var funcs: {[name: string]: Function} = {};
-//funcs['text_nocrlf_print'] = function(block: Blockly.Block) {
 
-export function getPythonFuncs(generator)
+export function getPythonFunctions(generator)
 {
   var funcs = {};
 
@@ -43,9 +42,9 @@ funcs['text_nocrlf_print'] = function(block) {
 
 //
 funcs['color_hsv2rgb'] = function(block) {
-  let hh = generator.valueToCode(block, 'H', Python.ORDER_NONE) || "1.0";
-  let ss = generator.valueToCode(block, 'S', Python.ORDER_NONE) || "1.0";
-  let vv = generator.valueToCode(block, 'V', Python.ORDER_NONE) || "1.0";
+  let hh = generator.valueToCode(block, 'H', Python.ORDER_NONE) || "0";
+  let ss = generator.valueToCode(block, 'S', Python.ORDER_NONE) || "0.45";
+  let vv = generator.valueToCode(block, 'V', Python.ORDER_NONE) || "0.65";
 
   hh = hh % 360;
   if (hh<0.0) hh = hh + 360;
@@ -99,7 +98,6 @@ funcs['color_hsv2rgb'] = function(block) {
   const code = Python.quote_(rgb);
   return [code, Python.ORDER_FUNCTION_CALL];
 };
-
 
   //
   return funcs;

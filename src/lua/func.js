@@ -1,8 +1,16 @@
+//
+import { luaGenerator as Lua } from 'blockly/lua';
 
-//import { luaGenerator as BlocklyGene } from 'blockly/lua';
+//
+export function getLuaFunctions(generator) {
+  var funcs = {};
 
-const notImplementedMsg = 'Not implemented';
-
-export function dummy_function(block, generator) {
-  return notImplementedMsg;
+//
+funcs['text_nocrlf_print'] = function(block) {
+  const msg = generator.Gene.valueToCode(block, 'TEXT', Lua.ORDER_NONE) || "''";
+  return 'io.write' + msg +'\n';
 };
+
+  //
+  return func;
+}

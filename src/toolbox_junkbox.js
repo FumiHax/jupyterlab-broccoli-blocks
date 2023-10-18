@@ -27,7 +27,7 @@ export const TOOLBOX_JUNKBOX = {
            `<block type='color_hsv2rgb'>
               <value name='H'>
                 <shadow type='math_number'>
-                  <field name='NUM'>0.0</field>
+                  <field name='NUM'>0</field>
                 </shadow>
               </value>
               <value name='S'>

@@ -1,8 +1,16 @@
+//
+import { phpGenerator as PHP } from 'blockly/php';
 
-//import { phpGenerator as BlocklyGene } from 'blockly/php';
 
-const notImplementedMsg = 'Not implemented';
+export function getPHPFunctions(generator) {
+  var funcs = {};
 
-export function dummy_function(block, generator) {
-  return notImplementedMsg;
+//
+funcs['text_nocrlf_print'] = function(block) {
+  const msg = generator.Gene.valueToCode(block, 'TEXT', PHP.ORDER_NONE) || "''";
+  return 'print(' + msg +');\n';
 };
+
+  //
+  return funs;
+}
