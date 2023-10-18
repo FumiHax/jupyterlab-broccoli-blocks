@@ -7,7 +7,7 @@ export function getPHPFunctions(generator) {
 
 //
 funcs['text_nocrlf_print'] = function(block) {
-  const msg = generator.Gene.valueToCode(block, 'TEXT', PHP.ORDER_NONE) || "''";
+  const msg = generator.valueToCode(block, 'TEXT', PHP.ORDER_NONE) || "''";
   return 'print(' + msg +');\n';
 };
 

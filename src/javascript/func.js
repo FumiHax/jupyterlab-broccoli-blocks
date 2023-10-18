@@ -15,7 +15,7 @@ funcs['text_print'] = function(block) {
 
 //
 funcs['text_nocrlf_print'] = function(block) {
-  const msg = generator.Gene.valueToCode(block, 'TEXT', Js.ORDER_NONE) || "''";
+  const msg = generator.valueToCode(block, 'TEXT', Js.ORDER_NONE) || "''";
   return 'process.stdout.write(' + msg +');\n';
 };
 

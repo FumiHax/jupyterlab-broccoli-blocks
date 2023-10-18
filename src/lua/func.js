@@ -7,7 +7,7 @@ export function getLuaFunctions(generator) {
 
 //
 funcs['text_nocrlf_print'] = function(block) {
-  const msg = generator.Gene.valueToCode(block, 'TEXT', Lua.ORDER_NONE) || "''";
+  const msg = generator.valueToCode(block, 'TEXT', Lua.ORDER_NONE) || "''";
   return 'io.write' + msg +'\n';
 };
 

@@ -7,7 +7,7 @@ export function getDartFunctions(generator) {
 
 //
 funcs['text_nocrlf_print'] = function(block) {
-  const msg = generator.Gene.valueToCode(block, 'TEXT', Dart.ORDER_NONE) || "''";
+  const msg = generator.valueToCode(block, 'TEXT', Dart.ORDER_NONE) || "''";
   return 'stdout.write(' + msg +');\n';
 };
 
