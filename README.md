@@ -17,7 +17,9 @@ pip install jupyterlab-broccoli-blocks
  
 ### Compile
 ```
-pip install -e .
+git clone https://github.com/fiseki/jupyterlab-broccoli-blocks.git
+cd jupyterlab-broccoli-blocks
+pip install -e ".[dev]"
 jupyter labextension develop . --overwrite
 jlpm build
 ```
