@@ -12,5 +12,5 @@ funcs['text_nocrlf_print'] = function(block) {
 };
 
   //
-  return funs;
+  return funcs;
 }

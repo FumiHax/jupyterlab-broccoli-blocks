@@ -47,9 +47,13 @@ const plugin: JupyterFrontEndPlugin<void> = {
 
     // @ts-ignore
     register.registerCodes('python', fpython);
+    // @ts-ignore
     register.registerCodes('javascript', fjavascript);
+    // @ts-ignore
     register.registerCodes('php', fphp);
+    // @ts-ignore
     register.registerCodes('lua', flua);
+    // @ts-ignore
     register.registerCodes('dart', fdart);
   }
 };
