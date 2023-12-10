@@ -46,8 +46,6 @@ funcs['math_change'] = function(block) {
 }
 
 
-
-
 //
 funcs['text_nocrlf_print'] = function(block) {
   const  msg = generator.valueToCode(block, 'TEXT', Python.ORDER_NONE) || "''";

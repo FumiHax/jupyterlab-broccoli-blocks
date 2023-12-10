@@ -37,7 +37,7 @@ const plugin: JupyterFrontEndPlugin<void> = {
     });
     const trans = (translator || nullTranslator).load('jupyterlab');
 
-    register.registerToolbox(trans.__('Junk Box'), TOOLBOX);
+    bregister.registerToolbox(trans.__('Junk Box'), TOOLBOX);
 
     var fpython = getPythonFunctions(bregister.generators.get('python'));
     var fjavascript = getJsFunctions(bregister.generators.get('javascript'));
@@ -45,18 +45,19 @@ const plugin: JupyterFrontEndPlugin<void> = {
     var flua = getLuaFunctions(bregister.generators.get('lua'));
     var fdart = getDartFunctions(bregister.generators.get('dart'));
 
-console.log("=== START JUNKBOX ===");
+    //while (bregister.lock) {};
+    //bregister.lock = true;
     // @ts-ignore
-    register.registerCodes('python', fpython);
+    bregister.registerCodes('python', fpython);
     // @ts-ignore
-    register.registerCodes('javascript', fjavascript);
+    bregister.registerCodes('javascript', fjavascript);
     // @ts-ignore
-    register.registerCodes('php', fphp);
+    bregister.registerCodes('php', fphp);
     // @ts-ignore
-    register.registerCodes('lua', flua);
+    bregister.registerCodes('lua', flua);
     // @ts-ignore
-    register.registerCodes('dart', fdart);
-console.log("=== END   JUNKBOX ===");
+    bregister.registerCodes('dart', fdart);
+    //bregister.lock = false;
   }
 };
 
