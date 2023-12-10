@@ -1,6 +1,11 @@
 # jupyterlab-broccoli-blocks
 Extension template for **jupyterlab-broccoli**
 
+#### for JpuyterLab 4.0.x
+* 0.4.x
+#### for JpuyterLab 3.6.x
+* 0.3.0
+
 ## Install
 ```
 pip install jupyterlab-broccoli
