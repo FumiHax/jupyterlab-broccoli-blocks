@@ -1,15 +1,15 @@
 {
   "name": "jupyterlab-broccoli-blocks",
-  "version": "0.4.0",
+  "version": "0.2.0",
   "description": "Template of Blockly extension for JupyterLab.",
   "keywords": [
     "jupyter",
     "jupyterlab",
     "jupyterlab-extension"
   ],
-  "homepage": "https://github.com/FumiHax/jupyterlab-broccoli-blocks",
+  "homepage": "https://github.com/fiseki/jupyterlab-broccoli-blocks",
   "bugs": {
-    "url": "https://github.com/FumiHax/jupyterlab-broccoli-blocks/issues"
+    "url": "https://github.com/fiseki/jupyterlab-broccoli-blocks/issues"
   },
   "license": "BSD-3-Clause",
   "author": {
@@ -25,7 +25,7 @@
   "style": "style/index.css",
   "repository": {
     "type": "git",
-    "url": "https://github.com/FumiHax/jupyterlab-broccoli-blocks.git"
+    "url": "https://github.com/fiseki/jupyterlab-broccoli-blocks.git"
   },
   "scripts": {
     "build": "jlpm build:lib && jlpm build:labextension:dev",
@@ -55,33 +55,32 @@
     "postinstall": "patch-package"
   },
   "dependencies": {
-    "@jupyterlab/application": "^4.0",
-    "@jupyterlab/apputils": "^4.0",
-    "@jupyterlab/cells": "^4.0",
-    "@jupyterlab/codeeditor": "^4.0",
+    "@jupyterlab/application": "^3.6",
+    "@jupyterlab/apputils": "^3.6",
+    "@jupyterlab/cells": "^3.6",
     "@jupyterlab/coreutils": "^5.6",
-    "@jupyterlab/docregistry": "^4.0",
-    "@jupyterlab/rendermime": "^4.0",
+    "@jupyterlab/docregistry": "^3.6",
+    "@jupyterlab/rendermime": "^3.6",
     "@jupyterlab/services": "^6.6",
-    "@jupyterlab/ui-components": "^4.0.9",
+    "@jupyterlab/ui-components": "^3.6",
     "@lumino/algorithm": "^1.9.0",
     "@lumino/coreutils": "^1.11.0",
     "@lumino/messaging": "^1.10.0",
     "@lumino/signaling": "^1.10.0",
     "@lumino/widgets": "^1.37.1",
-    "blockly": "^9.3.3",
-    "jupyterlab-broccoli": "^0.4.0",
+    "blockly": "^9.2.1",
+    "jupyterlab-broccoli": "^0.3.4",
     "patch-package": "^6.4.7",
     "postinstall-postinstall": "^2.1.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1"
   },
   "resolutions": {
-    "@jupyterlab/rendermime": "^4.0",
-    "@jupyterlab/rendermime-interfaces": "^3.8.9"
+    "@jupyterlab/rendermime": "^3.6",
+    "@jupyterlab/rendermime-interfaces": "^3.6"
   },
   "devDependencies": {
-    "@jupyterlab/builder": "^4.0.0",
+    "@jupyterlab/builder": "^3.6.0",
     "@typescript-eslint/eslint-plugin": "^5.12.1",
     "@typescript-eslint/parser": "^5.12.1",
     "eslint": "^8.9.0",
