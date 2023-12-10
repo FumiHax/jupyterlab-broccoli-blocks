@@ -45,6 +45,7 @@ const plugin: JupyterFrontEndPlugin<void> = {
     var flua = getLuaFunctions(bregister.generators.get('lua'));
     var fdart = getDartFunctions(bregister.generators.get('dart'));
 
+console.log("=== START JUNKBOX ===");
     // @ts-ignore
     register.registerCodes('python', fpython);
     // @ts-ignore
@@ -55,6 +56,7 @@ const plugin: JupyterFrontEndPlugin<void> = {
     register.registerCodes('lua', flua);
     // @ts-ignore
     register.registerCodes('dart', fdart);
+console.log("=== END   JUNKBOX ===");
   }
 };
 

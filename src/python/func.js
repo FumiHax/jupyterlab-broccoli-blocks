@@ -34,6 +34,20 @@ export function getPythonFunctions(generator)
 {
   var funcs = {};
 
+
+
+funcs['math_change'] = function(block) {
+  // Add to a variable in place.
+  generator.definitions_['from_numbers_import_Number'] = 'from numbers import Number';
+  const argument0 = generator.valueToCode(block, 'DELTA', Python.ORDER_ADDITIVE) || '0';
+  const varName = generator.getVariableName(block.getFieldValue('VAR'));
+
+  return (varName + ' = ' + varName + ' + ' + argument0 + '\n');
+}
+
+
+
+
 //
 funcs['text_nocrlf_print'] = function(block) {
   const  msg = generator.valueToCode(block, 'TEXT', Python.ORDER_NONE) || "''";
