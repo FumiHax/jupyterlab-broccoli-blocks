@@ -1,15 +1,15 @@
 {
   "name": "jupyterlab-broccoli-blocks",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Template of Blockly extension for JupyterLab.",
   "keywords": [
     "jupyter",
     "jupyterlab",
     "jupyterlab-extension"
   ],
-  "homepage": "https://github.com/fiseki/jupyterlab-broccoli-blocks",
+  "homepage": "https://github.com/FumiHax/jupyterlab-broccoli-blocks",
   "bugs": {
-    "url": "https://github.com/fiseki/jupyterlab-broccoli-blocks/issues"
+    "url": "https://github.com/FumiHax/jupyterlab-broccoli-blocks/issues"
   },
   "license": "BSD-3-Clause",
   "author": {
@@ -25,7 +25,7 @@
   "style": "style/index.css",
   "repository": {
     "type": "git",
-    "url": "https://github.com/fiseki/jupyterlab-broccoli-blocks.git"
+    "url": "https://github.com/FumiHax/jupyterlab-broccoli-blocks.git"
   },
   "scripts": {
     "build": "jlpm build:lib && jlpm build:labextension:dev",
