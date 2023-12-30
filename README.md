@@ -11,6 +11,7 @@ pip install jupyterlab-broccoli
 https://github.com/fiseki/jupyterlab-broccoli-blocks.git
 ```
 or
+* for user
 ```
 pip install jupyterlab-broccoli
 pip install jupyterlab-broccoli-blocks
