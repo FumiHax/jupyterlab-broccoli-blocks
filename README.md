@@ -5,6 +5,7 @@ Extension template for **jupyterlab-broccoli**
 * https://pypi.org/project/jupyterlab-broccoli-blocks
 
 ## Install
+* for devel
 ```
 pip install jupyterlab-broccoli
 https://github.com/fiseki/jupyterlab-broccoli-blocks.git
