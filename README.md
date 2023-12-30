@@ -1,6 +1,9 @@
 # jupyterlab-broccoli-blocks
 Extension template for **jupyterlab-broccoli**
 
+## PyPI Project
+* https://pypi.org/project/jupyterlab-broccoli-blocks
+
 ## Install
 ```
 pip install jupyterlab-broccoli
