@@ -1,6 +1,6 @@
 {
   "name": "jupyterlab-broccoli-blocks",
-  "version": "0.4.5",
+  "version": "0.4.6",
   "description": "Template of Blockly extension for JupyterLab.",
   "keywords": [
     "jupyter",
@@ -74,8 +74,8 @@
     "@lumino/signaling": "^2.1.2",
     "@lumino/widgets": "^2.3.1",
     "@types/react": "^18.2.41",
-    "blockly": "^10.2.2",
-    "jupyterlab-broccoli": "^0.4.5",
+    "blockly": "^9.3.3",
+    "jupyterlab-broccoli": "^0.4.6",
     "patch-package": "^6.4.7",
     "postinstall-postinstall": "^2.1.0",
     "react": "^17.0.1",
