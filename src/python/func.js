@@ -1,16 +1,16 @@
 //
 import { pythonGenerator as Python } from 'blockly/python';
-//import { NameType } from 'blockly/core/names';
+import { NameType } from '../names';
 
 /*
-enum NameType {
-  DEVELOPER_VARIABLE = "DEVELOPER_VARIABLE",
-  VARIABLE = "VARIABLE",
-  PROCEDURE = "PROCEDURE"
-}
+var NameType = {
+  DEVELOPER_VARIABLE : "DEVELOPER_VARIABLE",
+  VARIABLE  : "VARIABLE",
+  PROCEDURE : "PROCEDURE"
+};
 */
 
-
+/*
 /*
 Python.ORDER_ATOMIC = 0;             // 0 "" ...
 Python.ORDER_COLLECTION = 1;         // tuples, lists, dictionaries
@@ -50,8 +50,7 @@ funcs['math_change'] = function(block) {
   // Add to a variable in place.
   generator.definitions_['from_numbers_import_Number'] = 'from numbers import Number';
   const argument0 = generator.valueToCode(block, 'DELTA', Python.ORDER_ADDITIVE) || '0';
-  //const varName   = generator.nameDB_.getName(block.getFieldValue('VAR'), NameType.VARIABLE);
-  const varName   = generator.nameDB_.getName(block.getFieldValue('VAR'), 'VARIABLE');
+  const varName   = generator.nameDB_.getName(block.getFieldValue('VAR'), NameType.VARIABLE);
 
   return (varName + ' = ' + varName + ' + ' + argument0 + '\n');
 }
