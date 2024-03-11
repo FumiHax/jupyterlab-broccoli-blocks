@@ -11,7 +11,6 @@ var NameType = {
 */
 
 /*
-/*
 Python.ORDER_ATOMIC = 0;             // 0 "" ...
 Python.ORDER_COLLECTION = 1;         // tuples, lists, dictionaries
 Python.ORDER_STRING_CONVERSION = 1;  // `expression...`
@@ -45,7 +44,7 @@ export function getPythonFunctions(generator)
   var funcs = {};
 
 
-
+//
 funcs['math_change'] = function(block) {
   // Add to a variable in place.
   generator.definitions_['from_numbers_import_Number'] = 'from numbers import Number';
